@@ -9,9 +9,9 @@ design and development.
 
 ## TO DO
 
- * Add a set of relevant structures: position, velocity, acceleration,
+ * (Done)Add a set of relevant structures: position, velocity, acceleration,
    force, planet.   
- * Add a set of adequate methods for each of the structures above.  
+ * (Partially done) Add a set of adequate methods for each of the structures above.  
  * Make a simple example.  
  * Add unit test using golang test suite.  
  * Add documentation comments to the project.  
