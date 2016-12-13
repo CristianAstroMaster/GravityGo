@@ -8,3 +8,7 @@ const GConstant float64 = 6.67408e-11
 const SunMass float64 = 1988500e24
 const EarthMass float64 = 5.9723e24
 const MoonMass float64 = 0.07346e24
+
+// Distances and radious are measured in kilometers
+const EarthMeanRadius float64 = 6371.0e3
+const MoonMeanRadius float64 = 1737.1e3

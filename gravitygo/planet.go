@@ -1,6 +1,9 @@
 package gravitygo
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 type Planet struct {
 	name         string
@@ -100,7 +103,7 @@ func (p *Planet) FieldMagnitudeAt(vector_ [3]float64) float64 {
 
 func (p *Planet) ForceAtV(vector_ Vector) Vector {
 	var vectorV Vector = VectorSubstract(p.GetPosition(), vector_)
-	var fieldMagnitude float64 = FieldMagnitudeAtV(vector_)
+	var fieldMagnitude float64 = p.FieldMagnitudeAtV(vector_)
 	if fieldMagnitude != math.NaN() {
 		vectorV.MakeVector([3]float64{0, 0, 0})
 		return vectorV
@@ -123,7 +126,7 @@ func (p *Planet) NetFieldOver(planets ...Planet) float64 {
 }
 
 func (p *Planet) NetForceOver(planets ...Planet) Vector {
-	var netForce Vector
+	var netField Vector
 
 	for _, planet := range planets {
 		if *p != planet {
@@ -132,4 +135,8 @@ func (p *Planet) NetForceOver(planets ...Planet) Vector {
 	}
 
 	return netField
+}
+
+func (p *Planet) ShowProperties() {
+	fmt.Println("Planet", p.GetName(), "with mass", p.GetMass(), "at position", p.GetPosition())
 }
